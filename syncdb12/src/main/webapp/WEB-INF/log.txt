@@ -1,0 +1,697 @@
+2015-04-22 15:27:59,128 [localhost-startStop-1] [org.springframework.web.servlet.DispatcherServlet] [INFO] - FrameworkServlet 'syncdb12': initialization started
+2015-04-22 15:27:59,144 [localhost-startStop-1] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Refreshing WebApplicationContext for namespace 'syncdb12-servlet': startup date [Wed Apr 22 15:27:59 CST 2015]; root of context hierarchy
+2015-04-22 15:27:59,186 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [syncdb12-servlet.xml]
+2015-04-22 15:27:59,455 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [datasource1.xml]
+2015-04-22 15:27:59,498 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [datasource2.xml]
+2015-04-22 15:27:59,525 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [task.xml]
+2015-04-22 15:27:59,624 [localhost-startStop-1] [com.mchange.v2.log.MLog] [INFO] - MLog clients using log4j logging.
+2015-04-22 15:27:59,660 [localhost-startStop-1] [com.mchange.v2.c3p0.C3P0Registry] [INFO] - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2015-04-22 15:27:59,875 [localhost-startStop-1] [org.springframework.beans.factory.support.DefaultListableBeanFactory] [INFO] - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@40c7730b: defining beans [checkCodeController,configController,dataController,loginController,logoutController,mainController,publicController,userController,db1service,configservice,dataservice,userservice,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,mvcContentNegotiationManager,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.handler.MappedInterceptor#1,org.springframework.web.servlet.handler.MappedInterceptor#2,datasource1,sqlsessionfactory1,org.mybatis.spring.SqlSessionTemplate#0,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionmanager1,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,datasource2,sqlsessionfactory2,org.mybatis.spring.SqlSessionTemplate#1,org.mybatis.spring.mapper.MapperScannerConfigurer#1,transactionmanager2,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,freemarkerConfig,viewResolver,multipartResolver,paginationutil,task221,task221crontrigger,org.springframework.scheduling.quartz.SchedulerFactoryBean#0]; root of factory hierarchy
+2015-04-22 15:27:59,895 [localhost-startStop-1] [org.springframework.web.servlet.DispatcherServlet] [ERROR] - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.mybatis.spring.mapper.MapperScannerConfigurer#1' defined in class path resource [datasource2.xml]: Cannot resolve reference to bean 'sqlsessionfactory2' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlsessionfactory2' defined in class path resource [datasource2.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\workspace\syncdb12\target\classes\zyycome\db2\pojo\TConfig.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:329)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:107)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1158)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:296)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:293)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:438)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:624)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:461)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:651)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:599)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:665)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:518)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:459)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:160)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1280)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1193)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1088)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5176)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5460)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlsessionfactory2' defined in class path resource [datasource2.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\workspace\syncdb12\target\classes\zyycome\db2\pojo\TConfig.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1512)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:296)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:293)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:323)
+	... 31 more
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\workspace\syncdb12\target\classes\zyycome\db2\pojo\TConfig.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:466)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:340)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1571)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1509)
+	... 38 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:464)
+	... 41 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:103)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:72)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:135)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:128)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:118)
+	... 43 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:117)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:130)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:101)
+	... 47 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:190)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:256)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:113)
+	... 49 more
+2015-04-22 17:01:20,920 [localhost-startStop-1] [org.springframework.web.servlet.DispatcherServlet] [INFO] - FrameworkServlet 'syncdb12': initialization started
+2015-04-22 17:01:20,936 [localhost-startStop-1] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Refreshing WebApplicationContext for namespace 'syncdb12-servlet': startup date [Wed Apr 22 17:01:20 CST 2015]; root of context hierarchy
+2015-04-22 17:01:20,970 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [syncdb12-servlet.xml]
+2015-04-22 17:01:21,225 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [datasource1.xml]
+2015-04-22 17:01:21,288 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [datasource2.xml]
+2015-04-22 17:01:21,304 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [task.xml]
+2015-04-22 17:01:21,447 [localhost-startStop-1] [com.mchange.v2.log.MLog] [INFO] - MLog clients using log4j logging.
+2015-04-22 17:01:21,495 [localhost-startStop-1] [com.mchange.v2.c3p0.C3P0Registry] [INFO] - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2015-04-22 17:01:21,727 [localhost-startStop-1] [org.springframework.beans.factory.support.DefaultListableBeanFactory] [INFO] - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@685ee33b: defining beans [checkCodeController,configController,dataController,loginController,logoutController,mainController,publicController,userController,db1service,configservice,dataservice,userservice,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,mvcContentNegotiationManager,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.handler.MappedInterceptor#1,org.springframework.web.servlet.handler.MappedInterceptor#2,datasource1,sqlsessionfactory1,org.mybatis.spring.SqlSessionTemplate#0,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionmanager1,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,datasource2,sqlsessionfactory2,org.mybatis.spring.SqlSessionTemplate#1,org.mybatis.spring.mapper.MapperScannerConfigurer#1,transactionmanager2,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,freemarkerConfig,viewResolver,multipartResolver,paginationutil,task221,task221crontrigger,org.springframework.scheduling.quartz.SchedulerFactoryBean#0]; root of factory hierarchy
+2015-04-22 17:01:21,743 [localhost-startStop-1] [org.springframework.web.servlet.DispatcherServlet] [ERROR] - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.mybatis.spring.mapper.MapperScannerConfigurer#1' defined in class path resource [datasource2.xml]: Cannot resolve reference to bean 'sqlsessionfactory2' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlsessionfactory2' defined in class path resource [datasource2.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\workspace\syncdb12\target\classes\zyycome\db2\pojo\TConfig.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:329)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:107)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1158)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:296)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:293)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:438)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:624)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:461)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:651)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:599)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:665)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:518)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:459)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:160)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1280)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1193)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1088)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5176)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5460)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlsessionfactory2' defined in class path resource [datasource2.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\workspace\syncdb12\target\classes\zyycome\db2\pojo\TConfig.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1512)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:296)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:293)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:323)
+	... 31 more
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\workspace\syncdb12\target\classes\zyycome\db2\pojo\TConfig.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:466)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:340)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1571)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1509)
+	... 38 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:464)
+	... 41 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:103)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:72)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:135)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:128)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:118)
+	... 43 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:117)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:130)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:101)
+	... 47 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:190)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:256)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:113)
+	... 49 more
+2015-04-22 17:01:56,473 [localhost-startStop-1] [org.springframework.web.servlet.DispatcherServlet] [INFO] - FrameworkServlet 'syncdb12': initialization started
+2015-04-22 17:01:56,489 [localhost-startStop-1] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Refreshing WebApplicationContext for namespace 'syncdb12-servlet': startup date [Wed Apr 22 17:01:56 CST 2015]; root of context hierarchy
+2015-04-22 17:01:56,541 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [syncdb12-servlet.xml]
+2015-04-22 17:01:56,781 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [datasource1.xml]
+2015-04-22 17:01:56,824 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [datasource2.xml]
+2015-04-22 17:01:56,856 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [task.xml]
+2015-04-22 17:01:56,968 [localhost-startStop-1] [com.mchange.v2.log.MLog] [INFO] - MLog clients using log4j logging.
+2015-04-22 17:01:57,007 [localhost-startStop-1] [com.mchange.v2.c3p0.C3P0Registry] [INFO] - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2015-04-22 17:01:57,239 [localhost-startStop-1] [org.springframework.beans.factory.support.DefaultListableBeanFactory] [INFO] - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a1193dc: defining beans [checkCodeController,configController,dataController,loginController,logoutController,mainController,publicController,userController,db1service,configservice,dataservice,userservice,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,mvcContentNegotiationManager,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.handler.MappedInterceptor#1,org.springframework.web.servlet.handler.MappedInterceptor#2,datasource1,sqlsessionfactory1,org.mybatis.spring.SqlSessionTemplate#0,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionmanager1,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,datasource2,sqlsessionfactory2,org.mybatis.spring.SqlSessionTemplate#1,org.mybatis.spring.mapper.MapperScannerConfigurer#1,transactionmanager2,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,freemarkerConfig,viewResolver,multipartResolver,paginationutil,task221,task221crontrigger,org.springframework.scheduling.quartz.SchedulerFactoryBean#0]; root of factory hierarchy
+2015-04-22 17:01:57,254 [localhost-startStop-1] [org.springframework.web.servlet.DispatcherServlet] [ERROR] - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.mybatis.spring.mapper.MapperScannerConfigurer#1' defined in class path resource [datasource2.xml]: Cannot resolve reference to bean 'sqlsessionfactory2' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlsessionfactory2' defined in class path resource [datasource2.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\workspace\syncdb12\target\classes\zyycome\db2\pojo\TConfig.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:329)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:107)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1158)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:296)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:293)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:438)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:624)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:461)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:651)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:599)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:665)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:518)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:459)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:160)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1280)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1193)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1088)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5176)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5460)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlsessionfactory2' defined in class path resource [datasource2.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\workspace\syncdb12\target\classes\zyycome\db2\pojo\TConfig.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1512)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:296)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:293)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:323)
+	... 31 more
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\workspace\syncdb12\target\classes\zyycome\db2\pojo\TConfig.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:466)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:340)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1571)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1509)
+	... 38 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:464)
+	... 41 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:103)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:72)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:135)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:128)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:118)
+	... 43 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'tconfig'.  Cause: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:117)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:130)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:101)
+	... 47 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: tconfig
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:190)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:256)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:113)
+	... 49 more
+2015-04-22 17:10:09,083 [localhost-startStop-1] [org.springframework.web.servlet.DispatcherServlet] [INFO] - FrameworkServlet 'syncdb12': initialization started
+2015-04-22 17:10:09,099 [localhost-startStop-1] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Refreshing WebApplicationContext for namespace 'syncdb12-servlet': startup date [Wed Apr 22 17:10:09 CST 2015]; root of context hierarchy
+2015-04-22 17:10:09,146 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [syncdb12-servlet.xml]
+2015-04-22 17:10:09,402 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [datasource1.xml]
+2015-04-22 17:10:09,450 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [datasource2.xml]
+2015-04-22 17:10:09,482 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [task.xml]
+2015-04-22 17:10:09,584 [localhost-startStop-1] [com.mchange.v2.log.MLog] [INFO] - MLog clients using log4j logging.
+2015-04-22 17:10:09,621 [localhost-startStop-1] [com.mchange.v2.c3p0.C3P0Registry] [INFO] - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2015-04-22 17:10:09,969 [localhost-startStop-1] [org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] [INFO] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-22 17:10:10,001 [localhost-startStop-1] [org.springframework.beans.factory.support.DefaultListableBeanFactory] [INFO] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@641a8e6a: defining beans [checkCodeController,configController,dataController,loginController,logoutController,mainController,publicController,userController,db1service,configservice,dataservice,userservice,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,mvcContentNegotiationManager,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.handler.MappedInterceptor#1,org.springframework.web.servlet.handler.MappedInterceptor#2,datasource1,sqlsessionfactory1,org.mybatis.spring.SqlSessionTemplate#0,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionmanager1,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,datasource2,sqlsessionfactory2,org.mybatis.spring.SqlSessionTemplate#1,org.mybatis.spring.mapper.MapperScannerConfigurer#1,transactionmanager2,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,freemarkerConfig,viewResolver,multipartResolver,paginationutil,task221,task221crontrigger,org.springframework.scheduling.quartz.SchedulerFactoryBean#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,db1Dao,configDao,dataDao,userDao]; root of factory hierarchy
+2015-04-22 17:10:10,281 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/checkcode/make],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void zyycome.controller.CheckCodeController.make(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model) throws java.io.IOException
+2015-04-22 17:10:10,442 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.add(javax.servlet.http.HttpServletRequest,java.lang.Long,org.springframework.ui.Model)
+2015-04-22 17:10:10,442 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2015-04-22 17:10:10,458 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.list(javax.servlet.http.HttpServletRequest,zyycome.util.PageInfo,org.springframework.ui.Model,zyycome.db2.pojo.TConfig)
+2015-04-22 17:10:10,458 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.save(javax.servlet.http.HttpServletRequest,zyycome.db2.pojo.TConfig,java.lang.String)
+2015-04-22 17:10:10,474 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/edit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.edit(javax.servlet.http.HttpServletRequest,java.lang.Long,org.springframework.ui.Model)
+2015-04-22 17:10:10,480 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/deletebatch],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.deletebatch(javax.servlet.http.HttpServletRequest,java.lang.Long[])
+2015-04-22 17:10:10,484 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/data/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.DataController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2015-04-22 17:10:10,484 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/data/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.DataController.list(javax.servlet.http.HttpServletRequest,zyycome.util.PageInfo,org.springframework.ui.Model,zyycome.db2.pojo.TData)
+2015-04-22 17:10:10,499 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/data/deletebatch],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.DataController.deletebatch(javax.servlet.http.HttpServletRequest,java.lang.Long[])
+2015-04-22 17:10:10,499 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/login/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.LoginController.index(org.springframework.ui.Model)
+2015-04-22 17:10:10,499 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/login/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public zyycome.ajax.AjaxResult zyycome.controller.LoginController.login(javax.servlet.http.HttpServletRequest,zyycome.db2.pojo.TUser,java.lang.String,org.springframework.ui.Model)
+2015-04-22 17:10:10,518 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/logout/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.LogoutController.logout(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2015-04-22 17:10:10,524 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/main/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.MainController.index()
+2015-04-22 17:10:10,528 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/public/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.PublicController.error(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model,java.lang.String)
+2015-04-22 17:10:10,534 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.add(javax.servlet.http.HttpServletRequest,java.lang.Long,org.springframework.ui.Model)
+2015-04-22 17:10:10,538 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2015-04-22 17:10:10,543 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.list(javax.servlet.http.HttpServletRequest,zyycome.util.PageInfo,org.springframework.ui.Model,zyycome.db2.pojo.TUser)
+2015-04-22 17:10:10,548 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.save(javax.servlet.http.HttpServletRequest,zyycome.db2.pojo.TUser,java.lang.String)
+2015-04-22 17:10:10,553 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/edit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.edit(javax.servlet.http.HttpServletRequest,java.lang.Long,org.springframework.ui.Model)
+2015-04-22 17:10:10,554 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/deletebatch],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.deletebatch(javax.servlet.http.HttpServletRequest,java.lang.Long[])
+2015-04-22 17:10:11,045 [localhost-startStop-1] [org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer] [INFO] - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2015-04-22 17:10:11,192 [localhost-startStop-1] [org.quartz.core.SchedulerSignalerImpl] [INFO] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-04-22 17:10:11,192 [localhost-startStop-1] [org.quartz.core.QuartzScheduler] [INFO] - Quartz Scheduler v.1.8.5 created.
+2015-04-22 17:10:11,192 [localhost-startStop-1] [org.quartz.simpl.RAMJobStore] [INFO] - RAMJobStore initialized.
+2015-04-22 17:10:11,192 [localhost-startStop-1] [org.quartz.core.QuartzScheduler] [INFO] - Scheduler meta-data: Quartz Scheduler (v1.8.5) 'org.springframework.scheduling.quartz.SchedulerFactoryBean#0' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-04-22 17:10:11,207 [localhost-startStop-1] [org.quartz.impl.StdSchedulerFactory] [INFO] - Quartz scheduler 'org.springframework.scheduling.quartz.SchedulerFactoryBean#0' initialized from an externally provided properties instance.
+2015-04-22 17:10:11,207 [localhost-startStop-1] [org.quartz.impl.StdSchedulerFactory] [INFO] - Quartz scheduler version: 1.8.5
+2015-04-22 17:10:11,207 [localhost-startStop-1] [org.quartz.core.QuartzScheduler] [INFO] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@4ea3b483
+2015-04-22 17:10:11,224 [localhost-startStop-1] [org.springframework.context.support.DefaultLifecycleProcessor] [INFO] - Starting beans in phase 2147483647
+2015-04-22 17:10:11,224 [localhost-startStop-1] [org.springframework.scheduling.quartz.SchedulerFactoryBean] [INFO] - Starting Quartz Scheduler now
+2015-04-22 17:10:11,224 [localhost-startStop-1] [org.quartz.core.QuartzScheduler] [INFO] - Scheduler org.springframework.scheduling.quartz.SchedulerFactoryBean#0_$_NON_CLUSTERED started.
+2015-04-22 17:10:11,256 [localhost-startStop-1] [org.springframework.web.servlet.DispatcherServlet] [INFO] - FrameworkServlet 'syncdb12': initialization completed in 2173 ms
+2015-04-22 17:10:20,155 [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-1] [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] [INFO] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 2saff7981q9dvwp1ayly1d|1d455374, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 2saff7981q9dvwp1ayly1d|1d455374, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/db2?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 50, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2015-04-22 17:10:20,626 [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-1] [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] [INFO] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 2saff7981q9dvwp1ayly1d|638a1ab8, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 2saff7981q9dvwp1ayly1d|638a1ab8, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/db1?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 50, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2015-04-22 17:10:31,261 [http-bio-8080-exec-5] [freemarker.runtime] [ERROR] - Error executing FreeMarker template
+FreeMarker template error:
+No mapping defined for http://www.springframework.org/tags/form
+
+The failing instruction (FTL stack trace):
+----------
+==> #assign form = JspTaglibs["http://www...  [in template "login/index.ftl" at line 1, column 1]
+----------
+
+Java stack trace (for programmers):
+----------
+freemarker.template.TemplateModelException: [... Exception message was already printed; see it above ...]
+	at freemarker.ext.jsp.TaglibFactory.get(TaglibFactory.java:179)
+	at freemarker.core.DynamicKeyName.dealWithStringKey(DynamicKeyName.java:151)
+	at freemarker.core.DynamicKeyName._eval(DynamicKeyName.java:108)
+	at freemarker.core.Expression.eval(Expression.java:111)
+	at freemarker.core.Assignment.accept(Assignment.java:106)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.MixedContent.accept(MixedContent.java:93)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.Environment.process(Environment.java:243)
+	at freemarker.template.Template.process(Template.java:277)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:263)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1208)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:992)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:939)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:827)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2015-04-22 17:11:08,885 [http-bio-8080-exec-6] [freemarker.runtime] [ERROR] - Error executing FreeMarker template
+FreeMarker template error:
+No mapping defined for http://www.springframework.org/tags/form
+
+The failing instruction (FTL stack trace):
+----------
+==> #assign form = JspTaglibs["http://www...  [in template "login/index.ftl" at line 1, column 1]
+----------
+
+Java stack trace (for programmers):
+----------
+freemarker.template.TemplateModelException: [... Exception message was already printed; see it above ...]
+	at freemarker.ext.jsp.TaglibFactory.get(TaglibFactory.java:179)
+	at freemarker.core.DynamicKeyName.dealWithStringKey(DynamicKeyName.java:151)
+	at freemarker.core.DynamicKeyName._eval(DynamicKeyName.java:108)
+	at freemarker.core.Expression.eval(Expression.java:111)
+	at freemarker.core.Assignment.accept(Assignment.java:106)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.MixedContent.accept(MixedContent.java:93)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.Environment.process(Environment.java:243)
+	at freemarker.template.Template.process(Template.java:277)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:263)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1208)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:992)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:939)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:827)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2015-04-22 17:11:09,828 [http-bio-8080-exec-9] [freemarker.runtime] [ERROR] - Error executing FreeMarker template
+FreeMarker template error:
+No mapping defined for http://www.springframework.org/tags/form
+
+The failing instruction (FTL stack trace):
+----------
+==> #assign form = JspTaglibs["http://www...  [in template "login/index.ftl" at line 1, column 1]
+----------
+
+Java stack trace (for programmers):
+----------
+freemarker.template.TemplateModelException: [... Exception message was already printed; see it above ...]
+	at freemarker.ext.jsp.TaglibFactory.get(TaglibFactory.java:179)
+	at freemarker.core.DynamicKeyName.dealWithStringKey(DynamicKeyName.java:151)
+	at freemarker.core.DynamicKeyName._eval(DynamicKeyName.java:108)
+	at freemarker.core.Expression.eval(Expression.java:111)
+	at freemarker.core.Assignment.accept(Assignment.java:106)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.MixedContent.accept(MixedContent.java:93)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.Environment.process(Environment.java:243)
+	at freemarker.template.Template.process(Template.java:277)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:263)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1208)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:992)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:939)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:827)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2015-04-22 17:12:01,224 [localhost-startStop-1] [org.springframework.web.servlet.DispatcherServlet] [INFO] - FrameworkServlet 'syncdb12': initialization started
+2015-04-22 17:12:01,239 [localhost-startStop-1] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Refreshing WebApplicationContext for namespace 'syncdb12-servlet': startup date [Wed Apr 22 17:12:01 CST 2015]; root of context hierarchy
+2015-04-22 17:12:01,286 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [syncdb12-servlet.xml]
+2015-04-22 17:12:01,536 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [datasource1.xml]
+2015-04-22 17:12:01,583 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [datasource2.xml]
+2015-04-22 17:12:01,614 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [task.xml]
+2015-04-22 17:12:01,723 [localhost-startStop-1] [com.mchange.v2.log.MLog] [INFO] - MLog clients using log4j logging.
+2015-04-22 17:12:01,754 [localhost-startStop-1] [com.mchange.v2.c3p0.C3P0Registry] [INFO] - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2015-04-22 17:12:02,129 [localhost-startStop-1] [org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] [INFO] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-22 17:12:02,175 [localhost-startStop-1] [org.springframework.beans.factory.support.DefaultListableBeanFactory] [INFO] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a1193dc: defining beans [checkCodeController,configController,dataController,loginController,logoutController,mainController,publicController,userController,db1service,configservice,dataservice,userservice,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,mvcContentNegotiationManager,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.handler.MappedInterceptor#1,org.springframework.web.servlet.handler.MappedInterceptor#2,datasource1,sqlsessionfactory1,org.mybatis.spring.SqlSessionTemplate#0,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionmanager1,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,datasource2,sqlsessionfactory2,org.mybatis.spring.SqlSessionTemplate#1,org.mybatis.spring.mapper.MapperScannerConfigurer#1,transactionmanager2,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,freemarkerConfig,viewResolver,multipartResolver,paginationutil,task221,task221crontrigger,org.springframework.scheduling.quartz.SchedulerFactoryBean#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,db1Dao,configDao,dataDao,userDao]; root of factory hierarchy
+2015-04-22 17:12:02,656 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/checkcode/make],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void zyycome.controller.CheckCodeController.make(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model) throws java.io.IOException
+2015-04-22 17:12:02,656 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.add(javax.servlet.http.HttpServletRequest,java.lang.Long,org.springframework.ui.Model)
+2015-04-22 17:12:02,656 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2015-04-22 17:12:02,656 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.list(javax.servlet.http.HttpServletRequest,zyycome.util.PageInfo,org.springframework.ui.Model,zyycome.db2.pojo.TConfig)
+2015-04-22 17:12:02,656 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.save(javax.servlet.http.HttpServletRequest,zyycome.db2.pojo.TConfig,java.lang.String)
+2015-04-22 17:12:02,656 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/edit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.edit(javax.servlet.http.HttpServletRequest,java.lang.Long,org.springframework.ui.Model)
+2015-04-22 17:12:02,656 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/deletebatch],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.deletebatch(javax.servlet.http.HttpServletRequest,java.lang.Long[])
+2015-04-22 17:12:02,672 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/data/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.DataController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2015-04-22 17:12:02,672 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/data/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.DataController.list(javax.servlet.http.HttpServletRequest,zyycome.util.PageInfo,org.springframework.ui.Model,zyycome.db2.pojo.TData)
+2015-04-22 17:12:02,672 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/data/deletebatch],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.DataController.deletebatch(javax.servlet.http.HttpServletRequest,java.lang.Long[])
+2015-04-22 17:12:02,672 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/login/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.LoginController.index(org.springframework.ui.Model)
+2015-04-22 17:12:02,672 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/login/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public zyycome.ajax.AjaxResult zyycome.controller.LoginController.login(javax.servlet.http.HttpServletRequest,zyycome.db2.pojo.TUser,java.lang.String,org.springframework.ui.Model)
+2015-04-22 17:12:02,672 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/logout/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.LogoutController.logout(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2015-04-22 17:12:02,672 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/main/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.MainController.index()
+2015-04-22 17:12:02,672 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/public/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.PublicController.error(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model,java.lang.String)
+2015-04-22 17:12:02,672 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.add(javax.servlet.http.HttpServletRequest,java.lang.Long,org.springframework.ui.Model)
+2015-04-22 17:12:02,672 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2015-04-22 17:12:02,672 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.list(javax.servlet.http.HttpServletRequest,zyycome.util.PageInfo,org.springframework.ui.Model,zyycome.db2.pojo.TUser)
+2015-04-22 17:12:02,672 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.save(javax.servlet.http.HttpServletRequest,zyycome.db2.pojo.TUser,java.lang.String)
+2015-04-22 17:12:02,672 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/edit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.edit(javax.servlet.http.HttpServletRequest,java.lang.Long,org.springframework.ui.Model)
+2015-04-22 17:12:02,688 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/deletebatch],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.deletebatch(javax.servlet.http.HttpServletRequest,java.lang.Long[])
+2015-04-22 17:12:03,166 [localhost-startStop-1] [org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer] [INFO] - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2015-04-22 17:12:03,276 [localhost-startStop-1] [org.quartz.core.SchedulerSignalerImpl] [INFO] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-04-22 17:12:03,276 [localhost-startStop-1] [org.quartz.core.QuartzScheduler] [INFO] - Quartz Scheduler v.1.8.5 created.
+2015-04-22 17:12:03,276 [localhost-startStop-1] [org.quartz.simpl.RAMJobStore] [INFO] - RAMJobStore initialized.
+2015-04-22 17:12:03,276 [localhost-startStop-1] [org.quartz.core.QuartzScheduler] [INFO] - Scheduler meta-data: Quartz Scheduler (v1.8.5) 'org.springframework.scheduling.quartz.SchedulerFactoryBean#0' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-04-22 17:12:03,276 [localhost-startStop-1] [org.quartz.impl.StdSchedulerFactory] [INFO] - Quartz scheduler 'org.springframework.scheduling.quartz.SchedulerFactoryBean#0' initialized from an externally provided properties instance.
+2015-04-22 17:12:03,276 [localhost-startStop-1] [org.quartz.impl.StdSchedulerFactory] [INFO] - Quartz scheduler version: 1.8.5
+2015-04-22 17:12:03,276 [localhost-startStop-1] [org.quartz.core.QuartzScheduler] [INFO] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@3b653d32
+2015-04-22 17:12:03,299 [localhost-startStop-1] [org.springframework.context.support.DefaultLifecycleProcessor] [INFO] - Starting beans in phase 2147483647
+2015-04-22 17:12:03,300 [localhost-startStop-1] [org.springframework.scheduling.quartz.SchedulerFactoryBean] [INFO] - Starting Quartz Scheduler now
+2015-04-22 17:12:03,301 [localhost-startStop-1] [org.quartz.core.QuartzScheduler] [INFO] - Scheduler org.springframework.scheduling.quartz.SchedulerFactoryBean#0_$_NON_CLUSTERED started.
+2015-04-22 17:12:03,326 [localhost-startStop-1] [org.springframework.web.servlet.DispatcherServlet] [INFO] - FrameworkServlet 'syncdb12': initialization completed in 2102 ms
+2015-04-22 17:12:10,116 [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-1] [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] [INFO] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 2saff7981q9gafu1s82j70|23206419, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 2saff7981q9gafu1s82j70|23206419, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/db2?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 50, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2015-04-22 17:12:10,553 [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-1] [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] [INFO] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 2saff7981q9gafu1s82j70|3c6f7e07, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 2saff7981q9gafu1s82j70|3c6f7e07, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/db1?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 50, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2015-04-22 17:12:52,673 [http-bio-8080-exec-2] [freemarker.runtime] [ERROR] - Error executing FreeMarker template
+FreeMarker template error:
+No mapping defined for http://www.springframework.org/tags/form
+
+The failing instruction (FTL stack trace):
+----------
+==> #assign form = JspTaglibs["http://www...  [in template "login/index.ftl" at line 1, column 1]
+----------
+
+Java stack trace (for programmers):
+----------
+freemarker.template.TemplateModelException: [... Exception message was already printed; see it above ...]
+	at freemarker.ext.jsp.TaglibFactory.get(TaglibFactory.java:179)
+	at freemarker.core.DynamicKeyName.dealWithStringKey(DynamicKeyName.java:151)
+	at freemarker.core.DynamicKeyName._eval(DynamicKeyName.java:108)
+	at freemarker.core.Expression.eval(Expression.java:111)
+	at freemarker.core.Assignment.accept(Assignment.java:106)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.MixedContent.accept(MixedContent.java:93)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.Environment.process(Environment.java:243)
+	at freemarker.template.Template.process(Template.java:277)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:263)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1208)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:992)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:939)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:827)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2015-04-22 23:16:09,569 [localhost-startStop-1] [org.springframework.web.servlet.DispatcherServlet] [INFO] - FrameworkServlet 'syncdb12': initialization started
+2015-04-22 23:16:09,592 [localhost-startStop-1] [org.springframework.web.context.support.XmlWebApplicationContext] [INFO] - Refreshing WebApplicationContext for namespace 'syncdb12-servlet': startup date [Wed Apr 22 23:16:09 CST 2015]; root of context hierarchy
+2015-04-22 23:16:09,705 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [syncdb12-servlet.xml]
+2015-04-22 23:16:10,302 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [datasource1.xml]
+2015-04-22 23:16:10,383 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [datasource2.xml]
+2015-04-22 23:16:10,399 [localhost-startStop-1] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] [INFO] - Loading XML bean definitions from class path resource [task.xml]
+2015-04-22 23:16:10,577 [localhost-startStop-1] [com.mchange.v2.log.MLog] [INFO] - MLog clients using log4j logging.
+2015-04-22 23:16:10,616 [localhost-startStop-1] [com.mchange.v2.c3p0.C3P0Registry] [INFO] - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2015-04-22 23:16:11,505 [localhost-startStop-1] [org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] [INFO] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-04-22 23:16:11,539 [localhost-startStop-1] [org.springframework.beans.factory.support.DefaultListableBeanFactory] [INFO] - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@19b4da3d: defining beans [checkCodeController,configController,dataController,loginController,logoutController,mainController,publicController,userController,db1service,configservice,dataservice,userservice,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,mvcContentNegotiationManager,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.handler.MappedInterceptor#1,org.springframework.web.servlet.handler.MappedInterceptor#2,datasource1,sqlsessionfactory1,org.mybatis.spring.SqlSessionTemplate#0,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionmanager1,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,datasource2,sqlsessionfactory2,org.mybatis.spring.SqlSessionTemplate#1,org.mybatis.spring.mapper.MapperScannerConfigurer#1,transactionmanager2,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,freemarkerConfig,viewResolver,multipartResolver,paginationutil,task221,task221crontrigger,org.springframework.scheduling.quartz.SchedulerFactoryBean#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,db1Dao,configDao,dataDao,userDao]; root of factory hierarchy
+2015-04-22 23:16:12,089 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/checkcode/make],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void zyycome.controller.CheckCodeController.make(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.ui.Model) throws java.io.IOException
+2015-04-22 23:16:12,089 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.add(javax.servlet.http.HttpServletRequest,java.lang.Long,org.springframework.ui.Model)
+2015-04-22 23:16:12,089 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2015-04-22 23:16:12,089 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.list(javax.servlet.http.HttpServletRequest,zyycome.util.PageInfo,org.springframework.ui.Model,zyycome.db2.pojo.TConfig)
+2015-04-22 23:16:12,089 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.save(javax.servlet.http.HttpServletRequest,zyycome.db2.pojo.TConfig,java.lang.String)
+2015-04-22 23:16:12,089 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/edit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.edit(javax.servlet.http.HttpServletRequest,java.lang.Long,org.springframework.ui.Model)
+2015-04-22 23:16:12,089 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/config/deletebatch],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.ConfigController.deletebatch(javax.servlet.http.HttpServletRequest,java.lang.Long[])
+2015-04-22 23:16:12,089 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/data/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.DataController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2015-04-22 23:16:12,089 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/data/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.DataController.list(javax.servlet.http.HttpServletRequest,zyycome.util.PageInfo,org.springframework.ui.Model,zyycome.db2.pojo.TData)
+2015-04-22 23:16:12,089 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/data/deletebatch],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.DataController.deletebatch(javax.servlet.http.HttpServletRequest,java.lang.Long[])
+2015-04-22 23:16:12,089 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/login/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.LoginController.index(org.springframework.ui.Model)
+2015-04-22 23:16:12,089 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/login/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public zyycome.ajax.AjaxResult zyycome.controller.LoginController.login(javax.servlet.http.HttpServletRequest,zyycome.db2.pojo.TUser,java.lang.String,org.springframework.ui.Model)
+2015-04-22 23:16:12,089 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/logout/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.LogoutController.logout(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+2015-04-22 23:16:12,105 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/main/index],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.MainController.index()
+2015-04-22 23:16:12,106 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/public/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.PublicController.error(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model,java.lang.String)
+2015-04-22 23:16:12,107 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.add(javax.servlet.http.HttpServletRequest,java.lang.Long,org.springframework.ui.Model)
+2015-04-22 23:16:12,107 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/delete],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.delete(javax.servlet.http.HttpServletRequest,java.lang.Long)
+2015-04-22 23:16:12,107 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.list(javax.servlet.http.HttpServletRequest,zyycome.util.PageInfo,org.springframework.ui.Model,zyycome.db2.pojo.TUser)
+2015-04-22 23:16:12,108 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.save(javax.servlet.http.HttpServletRequest,zyycome.db2.pojo.TUser,java.lang.String)
+2015-04-22 23:16:12,108 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/edit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.edit(javax.servlet.http.HttpServletRequest,java.lang.Long,org.springframework.ui.Model)
+2015-04-22 23:16:12,108 [localhost-startStop-1] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] [INFO] - Mapped "{[/freemarker/user/deletebatch],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String zyycome.controller.UserController.deletebatch(javax.servlet.http.HttpServletRequest,java.lang.Long[])
+2015-04-22 23:16:12,980 [localhost-startStop-1] [org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer] [INFO] - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2015-04-22 23:16:13,238 [localhost-startStop-1] [org.quartz.core.SchedulerSignalerImpl] [INFO] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2015-04-22 23:16:13,238 [localhost-startStop-1] [org.quartz.core.QuartzScheduler] [INFO] - Quartz Scheduler v.1.8.5 created.
+2015-04-22 23:16:13,238 [localhost-startStop-1] [org.quartz.simpl.RAMJobStore] [INFO] - RAMJobStore initialized.
+2015-04-22 23:16:13,238 [localhost-startStop-1] [org.quartz.core.QuartzScheduler] [INFO] - Scheduler meta-data: Quartz Scheduler (v1.8.5) 'org.springframework.scheduling.quartz.SchedulerFactoryBean#0' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2015-04-22 23:16:13,238 [localhost-startStop-1] [org.quartz.impl.StdSchedulerFactory] [INFO] - Quartz scheduler 'org.springframework.scheduling.quartz.SchedulerFactoryBean#0' initialized from an externally provided properties instance.
+2015-04-22 23:16:13,238 [localhost-startStop-1] [org.quartz.impl.StdSchedulerFactory] [INFO] - Quartz scheduler version: 1.8.5
+2015-04-22 23:16:13,238 [localhost-startStop-1] [org.quartz.core.QuartzScheduler] [INFO] - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@69e3f088
+2015-04-22 23:16:13,286 [localhost-startStop-1] [org.springframework.context.support.DefaultLifecycleProcessor] [INFO] - Starting beans in phase 2147483647
+2015-04-22 23:16:13,286 [localhost-startStop-1] [org.springframework.scheduling.quartz.SchedulerFactoryBean] [INFO] - Starting Quartz Scheduler now
+2015-04-22 23:16:13,286 [localhost-startStop-1] [org.quartz.core.QuartzScheduler] [INFO] - Scheduler org.springframework.scheduling.quartz.SchedulerFactoryBean#0_$_NON_CLUSTERED started.
+2015-04-22 23:16:13,349 [localhost-startStop-1] [org.springframework.web.servlet.DispatcherServlet] [INFO] - FrameworkServlet 'syncdb12': initialization completed in 3760 ms
+2015-04-22 23:16:20,150 [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-1] [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] [INFO] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge0yu981qmgl49r04br1|698a22d6, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge0yu981qmgl49r04br1|698a22d6, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/db2?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 50, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2015-04-22 23:16:20,670 [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-1] [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] [INFO] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge0yu981qmgl49r04br1|c6ef965, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge0yu981qmgl49r04br1|c6ef965, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/db1?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 50, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2015-04-22 23:16:28,802 [http-bio-8080-exec-3] [freemarker.runtime] [ERROR] - Error executing FreeMarker template
+FreeMarker template error:
+No mapping defined for http://www.springframework.org/tags/form
+
+The failing instruction (FTL stack trace):
+----------
+==> #assign form = JspTaglibs["http://www...  [in template "login/index.ftl" at line 1, column 1]
+----------
+
+Java stack trace (for programmers):
+----------
+freemarker.template.TemplateModelException: [... Exception message was already printed; see it above ...]
+	at freemarker.ext.jsp.TaglibFactory.get(TaglibFactory.java:179)
+	at freemarker.core.DynamicKeyName.dealWithStringKey(DynamicKeyName.java:151)
+	at freemarker.core.DynamicKeyName._eval(DynamicKeyName.java:108)
+	at freemarker.core.Expression.eval(Expression.java:111)
+	at freemarker.core.Assignment.accept(Assignment.java:106)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.MixedContent.accept(MixedContent.java:93)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.Environment.process(Environment.java:243)
+	at freemarker.template.Template.process(Template.java:277)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:366)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:283)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:233)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:263)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1208)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:992)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:939)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:827)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)

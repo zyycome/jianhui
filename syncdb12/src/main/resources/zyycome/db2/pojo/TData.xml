@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>     
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="zyycome.db2.dao.DataDao">
+	
+	<select id="load" resultType="tdata" parameterType="long">
+		select * from t_data where id=#{id}
+	</select>
+	
+	<insert id="save" parameterType="tdata">
+		insert into t_data(data,inserttime,sourcetable,synctype) values(#{data},#{inserttime},#{sourcetable},#{synctype})
+	</insert>
+	
+	<update id="updatesync" parameterType="tdata">
+		update t_data set syncflag=#{syncflag},synctime=#{synctime} where id=#{id}
+	</update>
+	
+	<update id="updateecho" parameterType="tdata">
+		update t_data set echoflag=#{echoflag},echotime=#{echotime} where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="long">
+		delete from t_data where id=#{id}
+	</delete>
+	
+	<select id="list" resultType="tdata" parameterType="map">		
+		select * from t_data where 1=1
+		<if test="sourcetable != null">
+			and sourcetable like #{sourcetable} 
+		</if> 
+		<if test="data != null">
+			and data like #{data} 
+		</if>
+		order by id desc limit #{limit} offset #{offset}
+	</select>
+	
+	<select id="count" resultType="long" parameterType="map">
+		select count(*) from t_data where 1=1
+		<if test="sourcetable != null">
+			and sourcetable like #{sourcetable} 
+		</if>
+		<if test="data != null">
+			and data like #{data} 
+		</if>
+	</select>
+		    
+</mapper>

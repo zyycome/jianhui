@@ -1,0 +1,55 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		">
+
+	<bean id="datasource2" class="com.mchange.v2.c3p0.ComboPooledDataSource"	destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />	
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/db2?useUnicode=true&amp;characterEncoding=UTF-8" />	
+		<property name="user" value="root" />
+		<property name="password" value="123456" />
+		<property name="minPoolSize" value="3" />
+		<property name="maxPoolSize" value="50" />
+		<property name="initialPoolSize" value="3" />
+		<property name="maxIdleTime" value="60" />
+		<property name="acquireIncrement" value="2" />
+	</bean>
+	
+	<bean id="sqlsessionfactory2" class="org.mybatis.spring.SqlSessionFactoryBean">		
+		<property name="dataSource" ref="datasource2" />
+		<property name="configLocation" value="classpath:myBatisConfig2.xml" />
+		<property name="mapperLocations" value="classpath:zyycome/db2/pojo/*.xml" />
+	</bean>
+	
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlsessionfactory2"/>
+	</bean>
+	
+	<!-- 扫描dao的关键，没有这个将报找不到dao实现 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="sqlSessionFactory" ref="sqlsessionfactory2" />
+		<property name="basePackage" value="zyycome.db2.dao" />
+	</bean>
+	
+	<!-- 实现数据库事物管理 -->
+	<bean id="transactionmanager2" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+  		<property name="dataSource" ref="datasource2" />
+  		<qualifier value="db2" />
+	</bean>
+	
+	<!-- 配合上面实现数据库事物管理 -->
+	<tx:annotation-driven transaction-manager="transactionmanager2"/>	
+
+</beans>	

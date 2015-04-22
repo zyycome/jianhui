@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>     
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="zyycome.db2.dao.ConfigDao">
+
+	<select id="load" resultType="tconfig" parameterType="long">
+		select * from t_config where id=#{id}
+	</select>
+	
+	<select id="loadByTaskname" resultType="tconfig" parameterType="string">
+		select * from t_config where taskname=#{taskname} and enableflag=1
+	</select>
+	
+	<select id="countTasknameId" resultType="long" parameterType="map">
+		<![CDATA[
+			select count(*) from t_config where taskname=#{taskname} and id<>#{id}
+		]]>	
+	</select>
+	
+	<insert id="save" parameterType="tconfig">
+		insert into t_config(curid,sourcetable,fields,keyfield,taskname,enableflag,remark) values(#{curid},#{sourcetable},#{fields},#{keyfield},#{taskname},#{enableflag},#{remark})
+	</insert>
+	
+	<update id="update" parameterType="tconfig">
+		update t_config set curid=#{curid},sourcetable=#{sourcetable},fields=#{fields},keyfield=#{keyfield},taskname=#{taskname},enableflag=#{enableflag},remark=#{remark} where id=#{id}
+	</update>
+	
+	<update id="updatecurid" parameterType="tconfig">
+		update t_config set curid=#{curid} where id=#{id}
+	</update>
+	
+	<select id="list" resultType="tconfig" parameterType="map">		
+		select * from t_config where 1=1
+		<if test="taskname != null">
+			and taskname like #{taskname} 
+		</if>  		
+		order by id desc limit #{limit} offset #{offset}
+	</select>
+	
+	<select id="count" resultType="long" parameterType="map">
+		select count(*) from t_config where 1=1
+		<if test="taskname != null">
+			and taskname like #{taskname} 
+		</if> 		
+	</select>
+	
+	<delete id="delete" parameterType="long">
+		delete from t_config where id=#{id}
+	</delete>
+	
+	<select id="loadAll" resultType="tconfig" parameterType="map">		
+		select * from t_config where enableflag=1 order by id desc
+	</select>
+		    
+</mapper>

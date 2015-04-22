@@ -1,0 +1,107 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		">
+	<!-- 配置同步任务 -->
+	<!-- <bean name="task121" class="org.springframework.scheduling.quartz.JobDetailBean">
+	   <property name="jobClass" value="zyycome.task.Task12" />
+	   <property name="jobDataAsMap">   
+            <map>   
+               <entry key="db1service" value-ref="db1service"></entry> 
+               <entry key="configservice" value-ref="configservice"></entry>
+               <entry key="dataservice" value-ref="dataservice"></entry>
+               <entry key="taskname" value="task121"></entry> 
+            </map>   
+        </property>
+	</bean>
+	
+	 <bean id="task121crontrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+	   <property name="jobDetail" ref="task121" />
+	   <property name="cronExpression" value="0/10 * * * * ?" />
+	 </bean> -->
+	 
+	 <!-- 配置同步任务 -->
+	 <!-- <bean name="task122" class="org.springframework.scheduling.quartz.JobDetailBean">
+	   <property name="jobClass" value="zyycome.task.Task12" />
+	   <property name="jobDataAsMap">   
+            <map>   
+               <entry key="db1service" value-ref="db1service"></entry> 
+               <entry key="configservice" value-ref="configservice"></entry>
+               <entry key="dataservice" value-ref="dataservice"></entry>
+               <entry key="taskname" value="task122"></entry> 
+            </map>   
+        </property>
+	</bean>
+	
+	 <bean id="task122crontrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+	   <property name="jobDetail" ref="task122" />
+	   <property name="cronExpression" value="0/10 * * * * ?" />
+	 </bean> -->
+	 
+	 <!-- 配置同步任务 -->
+	 <!-- <bean name="task123" class="org.springframework.scheduling.quartz.JobDetailBean">
+	   <property name="jobClass" value="zyycome.task.Task12" />
+	   <property name="jobDataAsMap">   
+            <map>   
+               <entry key="db1service" value-ref="db1service"></entry> 
+               <entry key="configservice" value-ref="configservice"></entry>
+               <entry key="dataservice" value-ref="dataservice"></entry>
+               <entry key="taskname" value="task123"></entry> 
+            </map>   
+        </property>
+	</bean>
+	
+	 <bean id="task123crontrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+	   <property name="jobDetail" ref="task123" />
+	   <property name="cronExpression" value="0/10 * * * * ?" />
+	 </bean>	 -->
+	 
+	<!-- <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	   <property name="triggers">
+	     <list>	
+	       <ref bean="task121crontrigger" />
+	       <ref bean="task122crontrigger" />
+	       <ref bean="task123crontrigger" />
+	    </list>
+	  </property>
+	</bean>  	 -->
+	 
+	<!-- 配置同步任务 -->
+	<bean name="task221" class="org.springframework.scheduling.quartz.JobDetailBean">
+	   <property name="jobClass" value="zyycome.task.Task22" />
+	   <property name="jobDataAsMap">   
+            <map>   
+               <entry key="db1service" value-ref="db1service"></entry> 
+               <entry key="configservice" value-ref="configservice"></entry>
+               <entry key="dataservice" value-ref="dataservice"></entry>
+               <entry key="taskname" value="task221"></entry> 
+            </map>   
+        </property>
+	</bean>
+	
+	 <bean id="task221crontrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+	   <property name="jobDetail" ref="task221" />
+	   <property name="cronExpression" value="0/10 * * * * ?" />
+	 </bean>
+	 
+	 <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	   <property name="triggers">
+	     <list>	
+	       <ref bean="task221crontrigger" />	      
+	    </list>
+	  </property>
+	</bean>  	
+
+</beans>	

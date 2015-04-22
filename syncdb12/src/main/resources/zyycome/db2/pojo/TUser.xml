@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>     
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="zyycome.db2.dao.UserDao">
+
+	<select id="load" resultType="tuser" parameterType="long">
+		select * from t_user where id=#{id}
+	</select>
+	
+	<insert id="save" parameterType="tuser">
+		insert into t_user(name,pwd,inserttime,logincount) values(#{name},#{pwd},#{inserttime},#{logincount})
+	</insert>
+	
+	<update id="update" parameterType="tuser">
+		update t_user set name=#{name},pwd=#{pwd} where id=#{id}
+	</update>
+	
+	<update id="updatelogin" parameterType="tuser">
+		update t_user set lastloginip=#{lastloginip},lastlogintime=#{lastlogintime},logincount=#{logincount} where id=#{id}
+	</update>	
+	
+	<select id="list" resultType="tuser" parameterType="map">		
+		select * from t_user where 1=1
+		<if test="name != null">
+			and name like #{name} 
+		</if>  		
+		order by id desc limit #{limit} offset #{offset}
+	</select>
+	
+	<select id="count" resultType="long" parameterType="map">
+		select count(*) from t_user where 1=1
+		<if test="name != null">
+			and name like #{name} 
+		</if> 		
+	</select>
+	
+	<delete id="delete" parameterType="long">
+		delete from t_user where id=#{id}
+	</delete>
+	
+	<select id="findByName" resultType="tuser" parameterType="map">
+		select * from t_user where name=#{name}
+	</select>
+	
+	<select id="findByNamePwd" resultType="tuser" parameterType="map">
+		select * from t_user where name=#{name} and pwd=#{pwd}
+	</select>
+
+		    
+</mapper>

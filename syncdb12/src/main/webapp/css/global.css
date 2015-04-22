@@ -1,0 +1,10 @@
+/* CSS Document */
+table,table td,table th{border:1px solid #000000;border-collapse:collapse;}
+a:link {color:#0000ff;} /*未访问的链接 */
+a:visited {color:#0000ff;} /*已访问的链接*/
+a:hover{color:#0000ff;} /*鼠标在链接上 */
+a:active {color:#0000ff;} /*点击激活链接*/
+.error{
+color:#FF0000;
+}
+
