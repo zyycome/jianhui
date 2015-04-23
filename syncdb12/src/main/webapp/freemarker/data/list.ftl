@@ -95,9 +95,9 @@
     <td>${tdata.data?html}</td>
     <td align="center">${tdata.synctype}</td>
     <td align="center">${tdata.syncflag}</td>
-    <td align="center">${tdata.synctime}</td>
+    <td align="center">${(tdata.synctime?string("yyyy-MM-dd HH:mm:ss"))!}</td>
     <td align="center">${tdata.echoflag}</td>
-    <td align="center">${tdata.echotime}</td>
+    <td align="center">${(tdata.echotime?string("yyyy-MM-dd HH:mm:ss"))!}</td>
     <td align="center"><a class="delete" href="../../freemarker/data/delete.do?id=${tdata.id}">删除</a></td>
   </tr>
   </#list>

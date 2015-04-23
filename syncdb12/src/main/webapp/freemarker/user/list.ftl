@@ -88,9 +88,9 @@
     <td align="center"><input class="chkId" name="ids" type="checkbox" id="ids" value="${tuser.id}" /></td>
     <td align="center">${tuser.id}</td>
     <td align="center">${tuser.name}</td>
-    <td align="center">${tuser.inserttime?datetime}</td>
+    <td align="center">${(tuser.inserttime?string("yyyy-MM-dd HH:mm:ss"))!}</td>
     <td align="center">${tuser.lastloginip}</td>
-    <td align="center"><#if tuser.lastlogintime??>${tuser.lastlogintime?datetime}</#if></td>
+    <td align="center">${(tuser.lastlogintime?string("yyyy-MM-dd HH:mm:ss"))!}</td>
     <td align="center">${tuser.logincount}</td>
     <td align="center"><a href="../../freemarker/user/edit.do?id=${tuser.id}">修改</a> <a class="delete" href="../../freemarker/user/delete.do?id=${tuser.id}">删除</a></td>
   </tr>
